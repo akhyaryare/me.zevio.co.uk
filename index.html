@@ -84,14 +84,27 @@
     /* HERO */
     .hero {
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 3rem;
       padding: 8rem 2.5rem 4rem;
-      max-width: 900px;
+      max-width: 1000px;
       margin: 0 auto;
       position: relative;
+    }
+
+    .hero-text { display: flex; flex-direction: column; align-items: flex-start; }
+
+    .hero-photo {
+      width: 280px;
+      height: 360px;
+      object-fit: cover;
+      object-position: top;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+      flex-shrink: 0;
     }
 
     .hero-badge {
@@ -330,6 +343,22 @@
     }
 
     /* RESPONSIVE */
+    /* ZEVIO PHOTO */
+    .zevio-photo {
+      width: 100%;
+      max-width: 420px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+      display: block;
+      margin: 0 auto 3rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-photo { width: 200px; height: 260px; margin: 0 auto; }
+    }
+
     @media (max-width: 640px) {
       nav { padding: 1rem 1.2rem; }
       nav ul { gap: 1.2rem; }
@@ -355,15 +384,18 @@
 
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-badge">Founder &amp; Builder</div>
-  <h1>Hi, I'm <span class="name">Akhyar.</span><br>I'm building<br>the future of<br>local business.</h1>
-  <p class="hero-sub">
-    Founder of <strong>Zevio</strong> — an AI automation platform helping UK local businesses run smarter, serve faster, and grow without the overhead.
-  </p>
-  <div class="hero-actions">
-    <a href="https://zevio.co.uk" class="btn btn-primary" target="_blank" rel="noopener">Visit Zevio →</a>
-    <a href="#story" class="btn btn-outline">My story</a>
+  <div class="hero-text">
+    <div class="hero-badge">Founder &amp; Builder</div>
+    <h1>Hi, I'm <span class="name">Akhyar.</span><br>I'm building<br>the future of<br>local business.</h1>
+    <p class="hero-sub">
+      Founder of <strong>Zevio</strong> — an AI automation platform helping UK local businesses run smarter, serve faster, and grow without the overhead.
+    </p>
+    <div class="hero-actions">
+      <a href="https://zevio.co.uk" class="btn btn-primary" target="_blank" rel="noopener">Visit Zevio →</a>
+      <a href="#story" class="btn btn-outline">My story</a>
+    </div>
   </div>
+  <img src="photo1.png" alt="Akhyar — Founder of Zevio" class="hero-photo" />
 </div>
 
 <hr class="divider" />
@@ -400,6 +432,7 @@
   <div class="section-label">The Product</div>
   <h2>What Zevio does.</h2>
   <p class="section-desc">One platform. Everything a local business needs to automate, grow, and run without constant manual effort.</p>
+  <img src="photo2.png" alt="Zevio — AI automation for local businesses" class="zevio-photo" />
   <div class="features-grid">
     <div class="feature-card">
       <div class="feature-icon">💬</div>
