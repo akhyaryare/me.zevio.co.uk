@@ -106,6 +106,12 @@
       margin: 0 auto;
     }
 
+    .hero-text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
     .hero-photo {
       width: 280px;
       height: 360px;
@@ -550,18 +556,28 @@
         text-align: center;
       }
 
-      .hero-text { display: flex; flex-direction: column; align-items: center; }
-
-      .hero-photo {
-        width: 160px;
-        height: 200px;
-        order: -1;
-        margin: 0 auto;
+      .hero-text {
+        align-items: center;
+        order: 2;
       }
 
-      .hero h1 { font-size: 2rem; }
+      .hero-photo {
+        width: 140px;
+        height: 180px;
+        order: 1;
+        margin: 0 auto;
+        object-position: top;
+      }
+
+      .hero h1 { font-size: 1.9rem; }
+
+      .hero-desc { text-align: center; }
+
+      .hero-outcomes { align-items: center; }
 
       .hero-outcomes li { justify-content: center; }
+
+      .btn { width: 100%; text-align: center; }
 
       .btn {
         width: 100%;
