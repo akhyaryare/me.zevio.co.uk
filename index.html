@@ -338,6 +338,83 @@
       line-height: 1.6;
     }
 
+    /* BEFORE AFTER */
+    .ba-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .ba-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+    }
+
+    .ba-card.after {
+      background: linear-gradient(135deg, var(--accent-soft), transparent);
+      border-color: rgba(108,99,255,0.3);
+    }
+
+    .ba-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .ba-card .ba-label { color: #ef4444; }
+    .ba-card.after .ba-label { color: #4ade80; }
+
+    .ba-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .ba-list li {
+      font-size: 0.93rem;
+      line-height: 1.5;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+    }
+
+    .ba-card .ba-list li { color: var(--muted); }
+    .ba-card.after .ba-list li { color: var(--text); }
+
+    .ba-card .ba-list li::before { content: '×'; color: #ef4444; font-weight: 700; flex-shrink: 0; }
+    .ba-card.after .ba-list li::before { content: '✓'; color: #4ade80; font-weight: 700; flex-shrink: 0; }
+
+    .ba-result {
+      background: var(--accent);
+      border-radius: var(--radius);
+      padding: 1.5rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .ba-result p {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .ba-result span {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.8);
+    }
+
     /* PROOF */
     .proof-card {
       background: var(--surface);
@@ -592,6 +669,10 @@
 
       .what-grid { grid-template-columns: 1fr; }
 
+      .ba-grid { grid-template-columns: 1fr; }
+
+      .ba-result { flex-direction: column; gap: 0.3rem; }
+
       .what-statement { padding: 1.5rem; font-size: 1rem; }
 
       .problem-statement { padding: 1.5rem; }
@@ -684,6 +765,42 @@
   <div class="problem-statement">
     <p>This is not growth work. This is wasted time.</p>
     <span>And it adds up to hours every single day.</span>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- BEFORE AFTER -->
+<section id="before-after">
+  <div class="section-label">Before and After</div>
+  <h2>Here is what actually changes.</h2>
+  <div class="ba-grid">
+    <div class="ba-card">
+      <div class="ba-label">Before</div>
+      <ul class="ba-list">
+        <li>30 to 50 WhatsApp messages replied to manually every day</li>
+        <li>Customers wait hours for a response</li>
+        <li>Bookings confirmed late or missed entirely</li>
+        <li>Google reviews left unanswered for days</li>
+        <li>Social media posted randomly or not at all</li>
+        <li>No-shows with no deposit system</li>
+      </ul>
+    </div>
+    <div class="ba-card after">
+      <div class="ba-label">After</div>
+      <ul class="ba-list">
+        <li>Every WhatsApp message answered instantly, 24 hours a day</li>
+        <li>Response time goes from hours to seconds</li>
+        <li>Bookings confirmed automatically with reminders</li>
+        <li>Every review responded to professionally and automatically</li>
+        <li>30 days of social media scheduled in one click</li>
+        <li>Deposits collected upfront — no-shows stop</li>
+      </ul>
+    </div>
+  </div>
+  <div class="ba-result">
+    <p>3 to 5 hours saved every single day</p>
+    <span>From day one. Without touching a thing.</span>
   </div>
 </section>
 
