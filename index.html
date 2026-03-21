@@ -97,13 +97,24 @@
 
     /* HERO */
     .hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 9rem 2.5rem 6rem;
-      max-width: 900px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 4rem;
+      padding: 8rem 2.5rem 5rem;
+      max-width: 1000px;
       margin: 0 auto;
+    }
+
+    .hero-photo {
+      width: 280px;
+      height: 360px;
+      object-fit: cover;
+      object-position: top;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+      flex-shrink: 0;
     }
 
     .hero-badge {
@@ -533,11 +544,24 @@
       .hamburger { display: flex; }
 
       .hero {
-        padding: 7rem 1.2rem 4rem;
-        min-height: auto;
+        grid-template-columns: 1fr;
+        padding: 6rem 1.2rem 3rem;
+        gap: 2rem;
+        text-align: center;
+      }
+
+      .hero-text { display: flex; flex-direction: column; align-items: center; }
+
+      .hero-photo {
+        width: 160px;
+        height: 200px;
+        order: -1;
+        margin: 0 auto;
       }
 
       .hero h1 { font-size: 2rem; }
+
+      .hero-outcomes li { justify-content: center; }
 
       .btn {
         width: 100%;
@@ -615,6 +639,7 @@
 
 <!-- HERO -->
 <div class="hero">
+  <div class="hero-text">
   <div class="hero-badge">UK-based · Available now</div>
   <h1>I remove 3 to 4 hours of daily work from your business <span>within 24 hours.</span></h1>
   <p class="hero-desc">I automate your WhatsApp, reviews, bookings and social media — so your business runs properly without you being stuck in it all day.</p>
@@ -624,6 +649,8 @@
     <li>You get your time back</li>
   </ul>
   <a href="#contact" class="btn btn-primary">Book a free call — I'll show you exactly what this looks like for your business</a>
+  </div>
+  <img src="photo1.png" alt="Akhyar" class="hero-photo" />
 </div>
 
 <hr class="divider" />
